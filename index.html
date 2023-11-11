@@ -40,6 +40,7 @@
         <script src="data/EquipamientosEducacinComuna19_7.js"></script>
         <script src="data/EquipamientosDeporteComuna19_8.js"></script>
         <script src="data/EquipamientosSaludComuna19_9.js"></script>
+	<script src="data/EquipamientosCulturaComuna19_10.js"></script>
         <script>
         var highlightLayer;
         function highlightFeature(e) {
@@ -54,7 +55,6 @@
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
         // L.control.locate({locateOptions: {maxZoom: 19}}).addTo(map);
         L.control.locate({locateOptions:{maxZoom:19},onLocationFound:function(e){marker?marker.setLatLng(e.latlng):(marker=L.marker(e.latlng).addTo(map)),marker.bindPopup("Ubicación encontrada: "+e.latlng).openPopup();},onLocationError:function(e){alert(e.message);}}).addTo(map);
-
         // L.control.locate({locateOptions:{maxZoom:19},onLocationFound:function(e){marker?marker.setLatLng(e.latlng):(marker=L.marker(e.latlng).addTo(map)),marker.bindPopup("Ubicación encontrada: "+e.latlng).openPopup();},onLocationError:function(e){alert(e.message);}}).addTo(map);
         var measureControl = new L.Control.Measure({
             position: 'topleft',
@@ -85,29 +85,6 @@
         });
         layer_Base_0;
         map.addLayer(layer_Base_0);
-
-        // GeoJSON
-        var geojsonFeatures = {
-            "type": "FeatureCollection",
-            "name": "Equipamientos_Cultura_Comuna_19",
-            "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:EPSG::6249" } },
-            "features": [
-				{ "type": "Feature", "properties": { "nombre": "DOMUS TEATRO", "localizaci": "KR 25 NO 2 72", "servicio": "CULTURA", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1059399.1966, 871866.8406 ], [ 1059407.0947, 871860.5649 ], [ 1059387.7405, 871835.555000000051223 ], [ 1059381.617, 871840.298900000052527 ], [ 1059380.0883, 871841.991000000038184 ], [ 1059395.6205, 871862.1901 ], [ 1059399.1966, 871866.8406 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "FUNDACION AESCENA- ARTE ESCENICO NACIONAL", "localizaci": "KR 37A N O5C 07", "servicio": "CULTURA", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1059577.245000000111759, 870465.470100000035018 ], [ 1059577.5651, 870465.350899999961257 ], [ 1059581.5666, 870463.701 ], [ 1059583.447300000116229, 870462.925799999968149 ], [ 1059584.3676, 870462.597799999988638 ], [ 1059587.889, 870461.047200000029989 ], [ 1059583.3746, 870449.7685 ], [ 1059582.0592, 870446.733099999953993 ], [ 1059567.5096, 870452.3149 ], [ 1059573.443600000115111, 870466.901199999963865 ], [ 1059577.245000000111759, 870465.470100000035018 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "CENTRO CULTURAL AMPARO SINISTERRA DE CARVAJAL", "localizaci": "KR 56 NO 1 111", "servicio": "CULTURA", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1058295.5793, 868899.1851 ], [ 1058300.1314, 868897.069200000027195 ], [ 1058290.2451, 868814.253200000035577 ], [ 1058267.3594, 868816.168199999956414 ], [ 1058275.3854, 868900.869399999966845 ], [ 1058295.5793, 868899.1851 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "TEATRO  EL TELON TALLER DE ACTUACION", "localizaci": "CL3A NO 43 75", "servicio": "SALAS DE TEATRO", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1058479.3585, 870103.243099999963306 ], [ 1058490.4825, 870099.26769999996759 ], [ 1058497.6852, 870096.6239 ], [ 1058494.808600000105798, 870088.769899999955669 ], [ 1058493.6102, 870085.3356 ], [ 1058489.4886, 870086.8861 ], [ 1058475.6035, 870091.964900000020862 ], [ 1058474.3631, 870092.2927 ], [ 1058468.3608, 870094.509100000024773 ], [ 1058472.484299999894574, 870105.957999999984168 ], [ 1058479.3585, 870103.243099999963306 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "CENTRO DE CONVENCIONES EL RANCHO DE JONAS", "localizaci": "KR 44 NO 9C 97", "servicio": "CULTURA", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1060097.4711, 869615.010099999955855 ], [ 1060030.1828, 869638.170799999963492 ], [ 1060036.079699999885634, 869656.583100000047125 ], [ 1060040.125900000100955, 869655.322700000018813 ], [ 1060042.1028, 869654.7069 ], [ 1060046.8949, 869653.214200000045821 ], [ 1060053.58, 869651.131900000036694 ], [ 1060072.3994, 869645.273700000019744 ], [ 1060103.9501, 869635.5048 ], [ 1060097.4711, 869615.010099999955855 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "BIBLIOTECA DEPARTAMENTAL JORGE GARCES BORRERO¨ MUSEO DE HISTORIA NATURAL", "localizaci": "CL 5 NO 24A 111", "servicio": "CULTURA", "propiedad": "PUB", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1059826.5773, 871783.4129 ], [ 1059837.4855, 871773.9301 ], [ 1059843.9173, 871781.422400000039488 ], [ 1059864.4169, 871763.231900000013411 ], [ 1059861.2474, 871758.168300000019372 ], [ 1059858.314, 871755.253200000035577 ], [ 1059872.591900000115857, 871742.516300000017509 ], [ 1059871.6668, 871722.535400000051595 ], [ 1059849.3472, 871724.728 ], [ 1059843.0391, 871725.413999999989755 ], [ 1059836.8884, 871719.014300000038929 ], [ 1059829.8322, 871711.678199999965727 ], [ 1059828.3333, 871708.087999999988824 ], [ 1059782.4176, 871748.6541000000434 ], [ 1059779.950999999884516, 871751.4425 ], [ 1059814.0181, 871793.64359999995213 ], [ 1059826.5773, 871783.4129 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "CENTRO CULTURAL ANTROPOSOFICO", "localizaci": "CL 7A NO 41 11", "servicio": "CULTURA", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1059603.6619, 869938.257600000011735 ], [ 1059613.8392, 869969.488999999943189 ], [ 1059643.293099999893457, 869960.255800000042655 ], [ 1059637.8753, 869943.790999999968335 ], [ 1059633.082, 869929.223899999982677 ], [ 1059603.6619, 869938.257600000011735 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "BIBLIOTECA Y ESCUELA DE ARTE", "localizaci": "CL 11C OESTE NO 24C 03", "servicio": "CULTURA", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1058648.0386, 872477.929699999978766 ], [ 1058642.5125, 872477.600199999986216 ], [ 1058635.793099999893457, 872477.746700000017881 ], [ 1058629.098199999891222, 872477.747199999983422 ], [ 1058623.6702, 872483.175900000031106 ], [ 1058617.0681, 872493.547299999976531 ], [ 1058637.097800000105053, 872498.4401 ], [ 1058653.2176, 872502.320599999977276 ], [ 1058668.123700000112876, 872505.848699999973178 ], [ 1058671.259800000116229, 872499.276599999982864 ], [ 1058670.9827, 872495.492500000051223 ], [ 1058670.9561, 872495.13 ], [ 1058670.7165, 872491.857899999944493 ], [ 1058670.1583, 872490.1838 ], [ 1058668.906600000103936, 872486.429699999978766 ], [ 1058667.6609, 872485.09519999998156 ], [ 1058665.5687, 872482.790000000037253 ], [ 1058664.994, 872482.238200000021607 ], [ 1058663.8398, 872481.001700000022538 ], [ 1058654.4307, 872478.863999999943189 ], [ 1058651.8973, 872478.288399999961257 ], [ 1058648.0386, 872477.929699999978766 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "INSTITUTO POPULAR DE CULTURA", "localizaci": "CL 4 NO 27 140", "servicio": "CULTURA", "propiedad": "PUB", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1059277.0804, 871612.6742 ], [ 1059286.5428, 871562.986000000033528 ], [ 1059268.2684, 871558.849000000045635 ], [ 1059259.1599, 871608.398399999947287 ], [ 1059266.5633, 871610.146900000050664 ], [ 1059277.0804, 871612.6742 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "TEATRO SAN FERNANDO FUNCIONA CENTRO RELIGIOSO", "localizaci": "KR 34  CL 4", "servicio": "SALAS DE TEATRO", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1059424.484299999894574, 871425.857899999944493 ], [ 1059433.3815, 871419.582000000053085 ], [ 1059428.146, 871411.6128 ], [ 1059425.0137, 871406.844900000025518 ], [ 1059414.5539, 871390.923500000033528 ], [ 1059413.9063, 871389.2058 ], [ 1059404.910300000105053, 871395.54390000004787 ], [ 1059398.884800000116229, 871399.21999999997206 ], [ 1059400.2943, 871402.2452 ], [ 1059406.7796, 871412.170200000051409 ], [ 1059412.4338, 871420.823300000047311 ], [ 1059414.806, 871424.453699999954551 ], [ 1059417.298, 871424.815300000016578 ], [ 1059420.8639, 871425.332599999965169 ], [ 1059424.484299999894574, 871425.857899999944493 ] ] ] ] } },
-				{ "type": "Feature", "properties": { "nombre": "CENTRO CULTURAL COLOMBIANO", "localizaci": "KR 35A  CL 4A ESQUINA", "servicio": "CULTURA", "propiedad": "PRIV", "id_comuna": null }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 1059123.219100000103936, 871385.424600000027567 ], [ 1059134.4602, 871370.712500000023283 ], [ 1059134.8222, 871370.25179999996908 ], [ 1059133.7434, 871369.373099999967963 ], [ 1059131.5743, 871367.569200000027195 ], [ 1059129.2364, 871365.625 ], [ 1059128.1098, 871364.688100000028498 ], [ 1059115.0424, 871381.163799999980256 ], [ 1059119.2149, 871384.952999999979511 ], [ 1059119.7407, 871385.290999999968335 ], [ 1059120.294, 871385.49710000003688 ], [ 1059121.5703, 871385.7648 ], [ 1059123.1813, 871385.452700000023469 ], [ 1059123.219100000103936, 871385.424600000027567 ] ] ] ] } }
-            ]
-        };
-
-        L.geoJSON(geojsonFeatures).addTo(map);
-        
         map.createPane('pane_ComunasCali_1');
         map.getPane('pane_ComunasCali_1').style.zIndex = 401;
         var layer_ComunasCali_1 = L.WMS.layer("http://ws-idesc.cali.gov.co:8081/geoserver/wms?version=1.1.0", "idesc:mc_comunas", {
@@ -419,6 +396,42 @@
                 </table>';
             layer.bindPopup(popupContent, {maxHeight: 400});
         }
+
+	function style_EquipamientosCulturaComuna19_10_0() {
+            return {
+                pane: 'pane_EquipamientosCulturaComuna19_10',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 4.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(173,58,112,1.0)',
+                interactive: true,
+            }
+        }
+        map.createPane('pane_EquipamientosCulturaComuna19_10');
+        map.getPane('pane_EquipamientosCulturaComuna19_10').style.zIndex = 410;
+        map.getPane('pane_EquipamientosCulturaComuna19_10').style['mix-blend-mode'] = 'normal';
+        var layer_EquipamientosCulturaComuna19_10 = new L.geoJson(json_EquipamientosCulturaComuna19_10, {
+            attribution: '',
+            interactive: true,
+            dataVar: 'json_EquipamientosCulturaComuna19_10',
+            layerName: 'layer_EquipamientosCulturaComuna19_10',
+            pane: 'pane_EquipamientosCulturaComuna19_10',
+            onEachFeature: pop_EquipamientosCulturaComuna19_10,
+            style: style_EquipamientosCulturaComuna19_10_0,
+        });
+        bounds_group.addLayer(layer_EquipamientosCulturaComuna19_10);
+        map.addLayer(layer_EquipamientosCulturaComuna19_10);
+            var title = new L.Control();
+            title.onAdd = function (map) {
+                this._div = L.DomUtil.create('div', 'info');
+                this.update();
+                return this._div;
+            };
 
         function style_EquipamientosSaludComuna19_9_0() {
             return {
